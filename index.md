@@ -1,8 +1,8 @@
-# Privacy Policy — Bmetronome
+# Privacy Policy — Dual Metronome
 
-_Last updated: 2026-07-28_
+_Last updated: 2026-09-14_
 
-Bmetronome ("the app") is an offline metronome and tuner built by
+Dual Metronome (formerly Bmetronome; "the app") is an offline metronome and tuner built by
 **Owlmakers**. This policy explains what data the app handles and
 where.
 
