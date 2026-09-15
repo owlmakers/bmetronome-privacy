@@ -1,6 +1,6 @@
 # Privacy Policy — Dual Metronome
 
-_Last updated: 2026-09-14_
+_Last updated: 2026-09-15 (own usage statistics added)_
 
 Dual Metronome (formerly Bmetronome; "the app") is an offline metronome and tuner built by
 **Owlmakers**. This policy explains what data the app handles and
@@ -18,8 +18,10 @@ where.
 | 메트로놈 설정 (BPM, 박자, 분할, 테마, 언어) | `shared_preferences`로 *기기 로컬*에만 저장. | **없음** |
 | 광고 식별자 (Android Advertising ID) + 기기/앱 사용 정보 | Google AdMob 광고 송출용. | **Google에 전송** |
 | 앱 이용 통계 (화면 조회, 실행·세션 횟수) | Google Analytics for Firebase가 앱 인스턴스 ID와 함께 기록. 서비스 이용 현황 분석용이며 *신원과 연결되지 않습니다*. | **Google에 전송** |
+| 자체 사용 통계 (국가·지역 포함) | 개발자 자체 서버(`api.owlmakers.com`)가 앱이 정상적으로 쓰이는지 확인하기 위해 기록. 앱 이름·버전·표시 언어, 화면 이동·탭 종류, 실행 중이라는 신호, *실행마다 새로 만들어지는 무작위 값*(저장 안 함, 식별 불가). | **개발자 자체 서버로 전송(HTTPS)** |
 
-본 앱은 사용자 *계정 / 이메일 / 이름 / 연락처*를 **수집하지 않습니다**.
+본 앱은 사용자 *계정 / 이메일 / 이름 / 연락처*를 **수집하지 않습니다**. 개발자가 운영하는 서버로 나가는 것은
+위 표의 **자체 사용 통계**뿐이며, 아래 4-2항에 자세히 적습니다.
 
 ### 2. 권한
 
@@ -52,7 +54,22 @@ where.
   성과를 확인하는 것입니다.
 
 자세한 내용은 [Google Analytics for Firebase 데이터 수집 안내](https://firebase.google.com/support/privacy)를
-참고하세요. 위 SDK(AdMob·Analytics) 외에 외부 네트워크 통신은 없습니다.
+참고하세요.
+
+### 4-2. 자체 사용 통계 (Owlmakers)
+
+개발자는 앱이 정상적으로 쓰이고 있는지 확인하기 위해 **자체 서버로 익명 사용 통계(국가·지역 포함)**를
+전송합니다(`api.owlmakers.com`, HTTPS).
+
+- 전송되는 것: 앱 이름·버전·표시 언어, 화면 이동과 버튼 탭 종류(위 4항과 같은 값), 광고를 눌렀는지 여부(광고
+  형식), 앱을 쓰는 중이라는 신호(메트로놈 재생 중 포함), 그리고 **앱을 실행할 때마다 새로 만들어지는 무작위
+  값**(저장하지 않으므로 이용자나 기기를 식별하지 않습니다).
+- 서버는 접속 경로에서 **국가와 시·도**만 기록합니다. **IP 주소는 저장하지 않으며**, 좌표 같은 정밀 위치는
+  받지 않습니다.
+- **마이크 오디오는 여기로도 전송되지 않습니다.**
+- 보관 기간은 1년이며, 제3자에게 제공하지 않습니다.
+
+위 SDK·서버(AdMob·Analytics·자체 사용 통계) 외에 외부 네트워크 통신은 없습니다.
 
 ### 5. 미성년자
 
@@ -82,9 +99,11 @@ where.
 | Metronome settings (BPM, time signature, subdivision, theme, language) | Stored *locally* via `shared_preferences`. | **No** |
 | Android Advertising ID + device/app usage info | Used by Google AdMob for ad delivery. | **Yes — Google** |
 | App usage statistics (screen views, launches/sessions) | Recorded by Google Analytics for Firebase against an app instance ID, to understand how the app is used. *Not linked to an identity.* | **Yes — Google** |
+| Our own usage statistics (including country and region) | Recorded by our own server (`api.owlmakers.com`) to confirm the app is working in real use. App name, version, display language, screen views/tap types, an "in use" signal, and a *random value created fresh on every launch* (never stored, not identifying). | **Yes — our own server (HTTPS)** |
 
 The app does **not** collect user *accounts, emails, names, or contact
-information*.
+information*. The only thing sent to a server the developer operates is the **usage statistics row above**,
+described in more detail in section 4b.
 
 ### 2. Permissions
 
@@ -118,7 +137,23 @@ that Google assigns automatically.
   app can be improved, and to review ad performance.
 
 See [Google Analytics for Firebase data collection](https://firebase.google.com/support/privacy)
-for details. Aside from these SDKs (AdMob and Analytics), no external
+for details.
+
+### 4b. Our own usage statistics (Owlmakers)
+
+To check that the app is working in real use, the developer sends **anonymous usage statistics
+(including country and region)** to its own server (`api.owlmakers.com`, over HTTPS).
+
+- What is sent: app name, version and display language; screen views and button tap types (the same
+  values as section 4); whether an ad was tapped (ad format); an "in use" signal (including while the
+  metronome is playing); and a **random value created fresh on every launch** (never stored, so it
+  identifies neither you nor your device).
+- The server records only the **country and region** of the connection. **IP addresses are not
+  stored**, and no precise location is received.
+- **Microphone audio is not sent here either.**
+- Data is kept for one year and is not shared with third parties.
+
+Aside from these SDKs/servers (AdMob, Analytics, our own usage statistics), no external
 network communication occurs.
 
 ### 5. Children
