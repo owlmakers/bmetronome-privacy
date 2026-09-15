@@ -64,7 +64,7 @@ where.
 - 전송되는 것: 앱 이름·버전·표시 언어, 화면 이동과 버튼 탭 종류(위 4항과 같은 값), 광고를 눌렀는지 여부(광고
   형식), 앱을 쓰는 중이라는 신호(메트로놈 재생 중 포함), 그리고 **앱을 실행할 때마다 새로 만들어지는 무작위
   값**(저장하지 않으므로 이용자나 기기를 식별하지 않습니다).
-- 서버는 접속 경로에서 **국가와 시·도**만 기록합니다. **IP 주소는 저장하지 않으며**, 좌표 같은 정밀 위치는
+- 서버는 접속 경로에서 **국가·시·도·도시 이름**만 기록합니다. **IP 주소는 저장하지 않으며**, 좌표 같은 정밀 위치는
   받지 않습니다.
 - **마이크 오디오는 여기로도 전송되지 않습니다.**
 - 보관 기간은 1년이며, 제3자에게 제공하지 않습니다.
@@ -148,7 +148,7 @@ To check that the app is working in real use, the developer sends **anonymous us
   values as section 4); whether an ad was tapped (ad format); an "in use" signal (including while the
   metronome is playing); and a **random value created fresh on every launch** (never stored, so it
   identifies neither you nor your device).
-- The server records only the **country and region** of the connection. **IP addresses are not
+- The server records only the **country, region and city name** of the connection. **IP addresses are not
   stored**, and no precise location is received.
 - **Microphone audio is not sent here either.**
 - Data is kept for one year and is not shared with third parties.
