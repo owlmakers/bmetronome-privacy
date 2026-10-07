@@ -1,3 +1,7 @@
 
 # oh-my-claudecode 런타임 상태 (커밋 금지)
 .omc/
+
+# macOS / Synology Drive 가 만드는 메타 (동기화 폴더 안 모든 저장소 공통)
+.DS_Store
+@eaDir/
